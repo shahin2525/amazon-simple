@@ -8,8 +8,8 @@ const Header = () => {
       <img src={logo} alt="" />
       <div>
         <a href="order">order</a>
-        <a href="order">order review</a>
-        <a href="order">order inventory</a>
+        <a href="order">review</a>
+        <a href="order">inventory</a>
         <a href="order">Login</a>
       </div>
     </nav>

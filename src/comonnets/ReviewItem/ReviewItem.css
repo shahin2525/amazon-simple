@@ -45,3 +45,9 @@
   /* font-size: ; */
   color: rgb(209, 50, 50);
 }
+.review-pd-price {
+  color: orange;
+}
+.review-sp-charge {
+  color: rgb(255, 174, 0);
+}

@@ -1,3 +1,15 @@
 .review-container {
   margin: 50px auto;
 }
+.checkout-btn {
+  display: flex;
+
+  align-items: center;
+  width: 90%;
+  height: 48px;
+  background-color: #ff3030;
+  border-radius: 4px;
+  margin: 10px auto;
+  color: white;
+  justify-content: space-between;
+}

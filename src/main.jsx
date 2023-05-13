@@ -9,6 +9,7 @@ import Order from "./comonnets/Order/Order.jsx";
 import Inventory from "./comonnets/Inventory/Inventory.jsx";
 import Login from "./comonnets/Login/Login.jsx";
 import cartProductsLoader from "./Loaders/Loaders.js";
+import Checkout from "./comonnets/Checkout/Checkout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Shop></Shop>,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout></Checkout>,
       },
       {
         path: "/order",

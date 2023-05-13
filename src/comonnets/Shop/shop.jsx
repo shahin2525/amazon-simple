@@ -2,7 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./shop.css";
 import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
-import { addToDb, getShoppingCart } from "../../utilities/fakedb";
+import {
+  addToDb,
+  deleteShoppingCart,
+  getShoppingCart,
+} from "../../utilities/fakedb";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee, faCheckSquare } from "@fortawesome/free-solid-svg-icons";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -25,7 +32,7 @@ const Shop = () => {
         savedCart.push(addedProduct);
       }
 
-      console.log(addedProduct);
+      //  onsole.log c(addedProduct);
     }
     setCart(savedCart);
   }, [products]);
@@ -46,6 +53,10 @@ const Shop = () => {
     setCart(newCart);
     addToDb(product.id);
   };
+  const clearCartBtn = () => {
+    setCart([]);
+    deleteShoppingCart();
+  };
   return (
     <div className="shop-container">
       <div className="product-container">
@@ -58,7 +69,16 @@ const Shop = () => {
         ))}
       </div>
       <div className="cart-container">
-        <Cart cart={cart}></Cart>
+        <Cart cart={cart} clearCartBtn={clearCartBtn}>
+          <Link to="/order">
+            <button className="order-review-btn">
+              order-review
+              <span>
+                <FontAwesomeIcon icon={faCheckSquare} />
+              </span>{" "}
+            </button>
+          </Link>
+        </Cart>
       </div>
     </div>
   );
